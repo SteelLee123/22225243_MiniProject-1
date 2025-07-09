@@ -36,6 +36,11 @@ export default function StudentsPage() {
     <div style={{ padding: 20 }}>
       <h1>Students</h1>
       <input 
+        placeholder="Student ID" 
+        value={studentId} 
+        onChange={e => setStudentId(e.target.value)} 
+      />
+      <input 
         placeholder="Name" 
         value={name} 
         onChange={e => setName(e.target.value)} 
@@ -48,7 +53,7 @@ export default function StudentsPage() {
       <button onClick={addStudent}>Add</button>
       <ul>
         {students.map((s, i) => (
-          <li key={i}>ID: {s.id} - {s.name} - {s.email}</li>
+          <li key={i}>ID: {s.id} - Student ID: {s.studentId} - {s.name} - {s.email}</li>
         ))}
       </ul>
     </div>
